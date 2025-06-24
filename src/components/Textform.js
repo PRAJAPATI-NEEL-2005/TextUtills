@@ -118,7 +118,7 @@ export default function Textform(props) {
           >
             space remove
           </button>
-          <button className="btn btn-primary mx-1 my-1" onClick={summarizeText}>
+          <button className="btn btn-primary mx-1 my-1" disabled={text.length === 0} onClick={summarizeText}>
             Summarize
           </button>
           <button
