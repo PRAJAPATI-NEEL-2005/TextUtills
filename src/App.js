@@ -6,6 +6,8 @@ import Alert from "./components/Alert";
 import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import BlobCursor from "./components/BlobCursor";
+
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -41,6 +43,7 @@ function App() {
         togglemode={togglemode}
         toggletext={`${mode} mode`}
       ></Navbar>
+      <BlobCursor />
       <Alert alert={alert}></Alert>
 
       <Routes>
