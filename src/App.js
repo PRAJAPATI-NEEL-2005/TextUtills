@@ -7,7 +7,7 @@ import About from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import BlobCursor from "./components/BlobCursor";
-
+import Footer from "./components/Footer"
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -66,6 +66,7 @@ function App() {
           }
         />
       </Routes>
+       <Footer mode={mode} />
     </>
   );
 }
