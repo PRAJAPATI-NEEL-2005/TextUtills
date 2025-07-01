@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode} shadow-sm py-3`}>
       <div className="container-fluid">
-        <Link className="navbar-brand fw-bold fs-4 text-primary-emphasis" to="/">
+        <NavLink className="navbar-brand fw-bold fs-4 text-primary-emphasis" to="/">
           <span style={{ color: props.mode === 'dark' ? '#00d9ff' : '#0056b3' }}>
             {props.title}
           </span>
-        </Link>
+        </NavLink>
 
         <button
           className="navbar-toggler"
@@ -27,19 +27,34 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link fw-semibold nav-underline-hover" to="/home">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link fw-semibold nav-underline-hover ${isActive ? 'active text-info' : ''}`
+                }
+                to="/home"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fw-semibold nav-underline-hover" to="/analyze">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link fw-semibold nav-underline-hover ${isActive ? 'active text-info' : ''}`
+                }
+                to="/analyze"
+              >
                 Analyze
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fw-semibold nav-underline-hover" to="/about">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link fw-semibold nav-underline-hover ${isActive ? 'active text-info' : ''}`
+                }
+                to="/about"
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
 
